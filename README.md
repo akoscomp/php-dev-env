@@ -20,7 +20,7 @@ Open in browser the adminer adn phpVERSION site:
 * For postgres the user is postgres and the password is POSTGRES_PASSWORD
 
 ## Customize:
-* Add your php files in ./data/webroot/phpxx folders.
+* Add your php files in ./webroot/phpxx folders.
 * In phpxx/Dockerfile can add more preinstalled php modules. Docs: https://hub.docker.com/_/php
 
 ## Fix permisson problems
