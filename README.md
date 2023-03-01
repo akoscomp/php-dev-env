@@ -10,6 +10,7 @@ Open in browser for adminer, php76 and php80 site:
 * http://localhost:8000/
 * http://localhost:8076/
 * http://localhost:8080/
+* http://localhost:8081/
 
 ### Adminer
 * As Server you can use: mysql57, mysql80, mariadb1010, postgres15
