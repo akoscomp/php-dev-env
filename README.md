@@ -1,5 +1,7 @@
 # php-dev-env
 
+Docker based development envoronment for a php project with database. Initially include diferent versions of php and database engines.
+
 ## RUN:
 * `git clone git@github.com:akoscomp/php-dev-env.git`
 * `cd php-dev-env`
@@ -18,4 +20,5 @@ Open in browser for adminer, php76 and php80 site:
 * For postgres the user is postgres and the password is POSTGRES_PASSWORD
 
 ## Customize:
-Add your php files in ./data/webroot/php74 and ./data/webroot/php80 folders.
+* Add your php files in ./data/webroot/php74 and ./data/webroot/php80 folders.
+* In phpxx/Dockerfile can add more preinstalled php modules. Docs: https://hub.docker.com/_/php
