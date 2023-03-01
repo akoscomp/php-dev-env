@@ -26,6 +26,7 @@ Open in browser the adminer adn phpVERSION site:
 ## Fix permisson problems
 When you edit webroot files in you user and want to write files from php app to webroot folder you probably got permisson errors. Next commands maybe can fix this problem:
 
-* `chmod 2775 data/webroot`
-* `chmod 2775 data/webroot/php*`
-* `chown -R 33 data/webroot`
+* `chmod 2775 ./webroot`
+* `chmod 2775 ./webroot/php*`
+* `sudo chmod g+w -R ./webroot`
+* `sudo chown -R 33 ./webroot`

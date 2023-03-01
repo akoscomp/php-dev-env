@@ -2,10 +2,12 @@
 version: "3.5"
 
 services:
+
+### APP containers
   php74:
     build: ./php74
     volumes:
-      - ./data/webroot/php74:/var/www/html
+      - ./webroot/php74:/var/www/html
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -14,7 +16,7 @@ services:
   php80:
     build: ./php80
     volumes:
-      - ./data/webroot/php80:/var/www/html
+      - ./webroot/php80:/var/www/html
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -23,13 +25,14 @@ services:
   php81:
     build: ./php81
     volumes:
-      - ./data/webroot/php81:/var/www/html
+      - ./webroot/php81:/var/www/html
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 8081:80
 
 
+### DB containers
   mysql57:
     image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password
@@ -42,7 +45,7 @@ services:
       MYSQL_USER: dbuser
       MYSQL_PASSWORD: dbpass
     volumes:
-      - ./data/dbmysql57:/var/lib/mysql
+      - ./db/dbmysql57:/var/lib/mysql
 
   mysql80:
     image: mysql:8.0
@@ -56,7 +59,7 @@ services:
       MYSQL_USER: dbuser
       MYSQL_PASSWORD: dbpass
     volumes:
-      - ./data/dbmysql80:/var/lib/mysql
+      - ./db/dbmysql80:/var/lib/mysql
 
   mariadb1010:
     image: mariadb:10.10
@@ -69,7 +72,7 @@ services:
       MARIADB_USER: dbuser
       MARIADB_PASSWORD: dbpass
     volumes:
-      - ./data/dbmariadb1010:/var/lib/mysql
+      - ./db/dbmariadb1010:/var/lib/mysql
 
   postgres15:
     image: postgres:15
@@ -80,8 +83,10 @@ services:
       POSTGRES_PASSWORD: verySecPasswoD
       PGDATA: /pgdata
     volumes:
-      - ./data/dbpostgres15:/pgdata
+      - ./db/dbpostgres15:/pgdata
 
+
+### Adminer
   adminer:
     image: adminer
     restart: always
