@@ -78,8 +78,9 @@ services:
       - 15432:5432
     environment:
       POSTGRES_PASSWORD: verySecPasswoD
+      PGDATA: /pgdata
     volumes:
-      - ./data/dbpostgres15:/var/lib/postgresql
+      - ./data/dbpostgres15:/pgdata
 
   adminer:
     image: adminer
