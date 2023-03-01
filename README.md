@@ -22,3 +22,9 @@ Open in browser the adminer adn phpVERSION site:
 ## Customize:
 * Add your php files in ./data/webroot/phpxx folders.
 * In phpxx/Dockerfile can add more preinstalled php modules. Docs: https://hub.docker.com/_/php
+
+## Fix permisson problems
+When you edit webroot files in you user and want to write files from php app to webroot folder you probably got permisson errors. Next commands maybe can fix this problem:
+
+* `chmod -R 2775 data/webroot`
+* `chown -R 33 data/webroot`
