@@ -4,8 +4,17 @@ version: "3.5"
 services:
 
 ### APP containers
+  php56:
+    build: ./app/php74
+    volumes:
+      - ./webroot/php56:/var/www/html
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 8056:80
+
   php74:
-    build: ./php74
+    build: ./app/php74
     volumes:
       - ./webroot/php74:/var/www/html
       - /etc/timezone:/etc/timezone:ro
@@ -14,7 +23,7 @@ services:
       - 8074:80
 
   php80:
-    build: ./php80
+    build: ./app/php80
     volumes:
       - ./webroot/php80:/var/www/html
       - /etc/timezone:/etc/timezone:ro
@@ -23,7 +32,7 @@ services:
       - 8080:80
 
   php81:
-    build: ./php81
+    build: ./app/php81
     volumes:
       - ./webroot/php81:/var/www/html
       - /etc/timezone:/etc/timezone:ro
