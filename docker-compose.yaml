@@ -5,7 +5,7 @@ services:
 
 ### APP containers
   php56:
-    build: ./app/php74
+    build: ./app/php56
     volumes:
       - ./webroot/php56:/var/www/html
       - /etc/timezone:/etc/timezone:ro
